@@ -26,6 +26,10 @@ export default {
     value(val, oldValue) {
       this.setCurrentValue(val);
     },
+    // eslint-disable-next-line
+    fileList(val, oldValue) {
+      this.setCurrentValue(val);
+    },    
   },
   methods: {
     clearFiles() {
@@ -51,9 +55,8 @@ export default {
     },
 
     setCurrentValue(value) {
-      if (value === this.currentValue) return;
       this.currentValue = value;
-      this.dispatch('ElFormItem', 'el.form.change', [value]);
+      this.dispatch('ElFormItem', 'el.form.change',  [].concat(value));
     },
   },
 };
