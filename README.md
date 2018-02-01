@@ -21,9 +21,10 @@ html文件
      <el-form  :model="form" ref="formName"  :rules="rules" label-width="120px" size="small">
         <el-form-item label="游戏文件包" prop="gameFileUrl">
           <form-upload 
-            v-model="form.gameFileUrl" 
+            :file-list="form.gameFileUrl" 
             action=""
-            :show-file-list="false"
+            :show-file-list="true"
+            list-type="picture-card"
             :http-request="uploadGamePkg"
           >
             <div class="cd-upload">
